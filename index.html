@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Nebula</title>
+    <script
+            crossorigin="anonymous"
+            src="https://kit.fontawesome.com/cbe18769d6.js"
+    ></script>
+</head>
+<body>
+<div class="title-bar">
+    <div class="left-sidebar" id="left-sidebar"><i class="fa-solid fa-bars"></i></div>
+    <div class="browser-button-container">
+        <div class="browser-button" id="browser-back">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div class="browser-button" id="browser-forward">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        <div class="browser-button" id="browser-refresh">
+            <i class="fa-solid fa-sync"></i>
+        </div>
+        <div class="browser-button" id="browser-home">
+            <i class="fa-solid fa-home"></i>
+        </div>
+    </div>
+    <div class="browser-address-bar">
+        <input
+                id="browser-address"
+                placeholder="Enter URL"
+                type="text"
+        />
+
+    </div>
+    <div class="window-button-container">
+        <div class="window-button" id="window-minimize">
+            <i class="fa-solid fa-window-minimize"></i>
+        </div>
+        <div class="window-button" id="window-maximize">
+            <i class="fa-solid fa-window-maximize"></i>
+        </div>
+        <div class="window-button"
+             id="window-close"
+        ><i class="fa-solid fa-x"></i></div>
+    </div>
+</div>
+<div class="content">
+    <webview id="webview"></webview>
+
+</div>
+
+
+<script src="/src/renderer.js" type="module"></script>
+</body>
+</html>

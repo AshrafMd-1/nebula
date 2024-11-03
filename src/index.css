@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 6px 14px;
+    height:5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    -webkit-app-region: drag;
+}
+
+.title-text {
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.window-button-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#window-minimize {
+    margin-top: -12px;
+}
+
+.fa-solid {
+    color: #d5d5d5;
+}
+
+.fa-solid:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.window-button {
+    border: none;
+    -webkit-app-region: no-drag;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window-button,.left-sidebar,.browser-button,.browser-address-bar {
+    -webkit-app-region: no-drag;
+}
+
+.browser-button-container {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-left: 1px solid #d5d5d5;
+}
+
+.browser-button {
+    border: none;
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.browser-address-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#browser-address {
+    border:none;
+    color: #000000;
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 2px 10px;
+}
+
+.left-sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    width: 100%;
+}
+
+#webview{
+    width: 100%;
+
+    height:95vh;
+}
