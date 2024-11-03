@@ -1,15 +1,19 @@
 import './index.css';
 
+
 const leftSidebarButton = document.getElementById('left-sidebar');
 const backBrowserButton = document.getElementById('browser-back');
 const forwardBrowserButton = document.getElementById('browser-forward');
 const refreshBrowserButton = document.getElementById('browser-refresh');
 const homeBrowserButton = document.getElementById('browser-home');
+const browserNewTabButton = document.getElementById('browser-new-tab');
 const addressBarBrowserInput = document.getElementById('browser-address');
 const windowCloseButton = document.getElementById('window-close');
 const windowMinimizeButton = document.getElementById('window-minimize');
 const windowMaximizeButton = document.getElementById('window-maximize');
 const webview = document.getElementById('webview');
+const peekWindow = document.getElementById('peek');
+const peekWebview = document.getElementById('peek-webview');
 
 const init = () => {
   webview.src = "https://www.google.com";
@@ -70,5 +74,14 @@ webview.addEventListener('did-navigate', (event) => {
 webview.addEventListener('did-navigate-in-page', (event) => {
   addressBarBrowserInput.value = event.url;
 });
+
+webview.addEventListener('new-window', (event) => {
+  console.log(event.url);
+});
+
+browserNewTabButton.addEventListener('click', () => {
+  api.newTab();
+});
+
 
 init()

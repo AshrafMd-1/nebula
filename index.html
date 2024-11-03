@@ -24,6 +24,9 @@
         <div class="browser-button" id="browser-home">
             <i class="fa-solid fa-home"></i>
         </div>
+        <div class="browser-button" id="browser-new-tab">
+            <i class="fa-solid fa-plus"></i>
+        </div>
     </div>
     <div class="browser-address-bar">
         <input
@@ -45,12 +48,12 @@
         ><i class="fa-solid fa-x"></i></div>
     </div>
 </div>
-<div class="content">
-    <webview allowpopups
-             autosize
-             id="webview"
-
+<div id="peek">
+    <webview id="peek-webview" src="https://www.bing.com"
     ></webview>
+</div>
+<div class="content">
+    <webview allowpopups id="webview"></webview>
 
 </div>
 
