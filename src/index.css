@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
@@ -14,7 +14,7 @@ body{
     background-color: #333;
     color: #fff;
     padding: 6px 14px;
-    height:5vh;
+    height: 5vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,7 +61,7 @@ body{
     align-items: center;
 }
 
-.window-button,.left-sidebar,.browser-button,.browser-address-bar {
+.window-button, .left-sidebar, .browser-button, .browser-address-bar {
     -webkit-app-region: no-drag;
 }
 
@@ -96,13 +96,32 @@ body{
 }
 
 #browser-address {
-    border:none;
+    border: none;
     color: #000000;
     width: 100%;
     padding: 5px 10px;
+    height: 3.7vh;
     border-radius: 5px;
     font-size: 18px;
     margin: 2px 10px;
+}
+
+@media screen and (max-width: 900px) {
+    #browser-address {
+        height: 4vh;
+    }
+
+    .title-bar {
+        height: 6vh;
+    }
+
+    .content {
+        height: 94vh;
+    }
+
+    #webview {
+        height: 94vh;
+    }
 }
 
 .left-sidebar {
@@ -120,8 +139,8 @@ body{
     width: 100%;
 }
 
-#webview{
+#webview {
     width: 100%;
 
-    height:95vh;
+    height: 95vh;
 }
