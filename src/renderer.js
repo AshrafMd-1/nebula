@@ -55,6 +55,7 @@ const handleAddressInput = (event) => {
     } else {
       elements.webview.src = `https://www.google.com/search?q=${input}`;
     }
+    elements.addressInput.blur();
     updateAddressBar();
   }
 };
@@ -65,7 +66,7 @@ const bindEvents = () => {
   elements.refreshButton.addEventListener('click', reloadPage);
   elements.homeButton.addEventListener('click', goHome);
 
-  elements.addressInput.addEventListener('focusin', () => elements.addressInput.select());
+  elements.addressInput.addEventListener('focusin', () => elements.addressInput.value='');
   elements.addressInput.addEventListener('focusout', updateAddressBar);
   elements.addressInput.addEventListener('keyup', handleAddressInput);
 
