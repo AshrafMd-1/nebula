@@ -10,7 +10,9 @@
 </head>
 <body>
 <div class="title-bar">
-    <div class="left-sidebar" id="left-sidebar"><i class="fa-solid fa-bars"></i></div>
+    <div class="browser-button" id="browser-always-on-top">
+        <i class="fa-solid fa-ban"></i>
+    </div>
     <div class="browser-button-container">
         <div class="browser-button" id="browser-back">
             <i class="fa-solid fa-arrow-left"></i>
@@ -24,9 +26,11 @@
         <div class="browser-button" id="browser-home">
             <i class="fa-solid fa-home"></i>
         </div>
+
         <div class="browser-button" id="browser-new-tab">
             <i class="fa-solid fa-plus"></i>
         </div>
+
     </div>
     <div class="browser-address-bar">
         <input
@@ -48,13 +52,20 @@
         ><i class="fa-solid fa-x"></i></div>
     </div>
 </div>
-<div id="peek">
-    <webview id="peek-webview" src="https://www.bing.com"
-    ></webview>
-</div>
+<!--<div class="popup-browser-address-bar">-->
+<!--    <input-->
+<!--            id="popup-browser-address"-->
+<!--            placeholder="Enter URL..."-->
+<!--            type="text"-->
+<!--    />-->
+
+<!--</div>-->
+<!--<div id="peek">-->
+<!--    <webview id="peek-webview" src="https://www.bing.com"-->
+<!--    ></webview>-->
+<!--</div>-->
 <div class="content">
     <webview allowpopups id="webview"></webview>
-
 </div>
 
 

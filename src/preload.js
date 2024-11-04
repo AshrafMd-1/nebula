@@ -5,4 +5,5 @@ contextBridge.exposeInMainWorld("api", {
   windowMinimizeButton: () => ipcRenderer.send("window-minimize"),
   windowMaximizeButton: () => ipcRenderer.send("window-maximize"),
   newTab: () => ipcRenderer.send("new-tab"),
+  toggleAlwaysOnTop: () => ipcRenderer.send("always-on-top"),
 });

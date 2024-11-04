@@ -1,87 +1,84 @@
 import './index.css';
 
+const elements = {
+  alwaysOnTopButton: document.getElementById('browser-always-on-top'),
+  alwaysOnTopIcon: document.querySelector('#browser-always-on-top i'),
+  backButton: document.getElementById('browser-back'),
+  forwardButton: document.getElementById('browser-forward'),
+  refreshButton: document.getElementById('browser-refresh'),
+  homeButton: document.getElementById('browser-home'),
+  newTabButton: document.getElementById('browser-new-tab'),
+  addressInput: document.getElementById('browser-address'),
+  closeButton: document.getElementById('window-close'),
+  minimizeButton: document.getElementById('window-minimize'),
+  maximizeButton: document.getElementById('window-maximize'),
+  webview: document.getElementById('webview'),
+};
 
-const leftSidebarButton = document.getElementById('left-sidebar');
-const backBrowserButton = document.getElementById('browser-back');
-const forwardBrowserButton = document.getElementById('browser-forward');
-const refreshBrowserButton = document.getElementById('browser-refresh');
-const homeBrowserButton = document.getElementById('browser-home');
-const browserNewTabButton = document.getElementById('browser-new-tab');
-const addressBarBrowserInput = document.getElementById('browser-address');
-const windowCloseButton = document.getElementById('window-close');
-const windowMinimizeButton = document.getElementById('window-minimize');
-const windowMaximizeButton = document.getElementById('window-maximize');
-const webview = document.getElementById('webview');
-const peekWindow = document.getElementById('peek');
-const peekWebview = document.getElementById('peek-webview');
+let isAlwaysOnTop = false;
 
 const init = () => {
-  webview.src = "https://www.google.com";
-  addressBarBrowserInput.value = webview.src;
-}
+  elements.webview.src = "https://www.google.com";
+  elements.addressInput.value = elements.webview.src;
+  elements.alwaysOnTopIcon.classList.add('always-on-top-off');
 
-backBrowserButton.addEventListener('click', () => {
-  webview.goBack();
-  addressBarBrowserInput.value = webview.src;
-});
+};
 
-forwardBrowserButton.addEventListener('click', () => {
-  webview.goForward();
-  addressBarBrowserInput.value = webview.src;
-});
+const updateAddressBar = () => {
+  elements.addressInput.value = elements.webview.src;
+};
 
-refreshBrowserButton.addEventListener('click', () => {
-  webview.reload();
-});
+const goBack = () => elements.webview.goBack();
+const goForward = () => elements.webview.goForward();
+const reloadPage = () => elements.webview.reload();
+const goHome = () => {
+  elements.webview.src = "https://www.google.com";
+  updateAddressBar();
+};
 
-homeBrowserButton.addEventListener('click', () => {
-  webview.src = "https://www.google.com";
-  addressBarBrowserInput.value = webview.src;
-});
+const toggleAlwaysOnTop = () => {
+  isAlwaysOnTop = !isAlwaysOnTop;
 
-addressBarBrowserInput.addEventListener('keyup', (event) => {
+  elements.alwaysOnTopIcon.classList.toggle('always-on-top-on', isAlwaysOnTop);
+  elements.alwaysOnTopIcon.classList.toggle('always-on-top-off', !isAlwaysOnTop);
+
+  api.toggleAlwaysOnTop();
+};
+
+const handleAddressInput = (event) => {
   if (event.key === 'Enter') {
-    if (addressBarBrowserInput.value.startsWith("http://") || addressBarBrowserInput.value
-      .startsWith("https://")) {
-      webview.src = addressBarBrowserInput.value;
-    } else if (addressBarBrowserInput.value.startsWith("www.")) {
-      webview.src = "https://" + addressBarBrowserInput.value;
-    } else if (addressBarBrowserInput.value.includes(".")) {
-      webview.src = "https://www." + addressBarBrowserInput.value;
+    const input = elements.addressInput.value;
+    if (input.startsWith("http://") || input.startsWith("https://")) {
+      elements.webview.src = input;
+    } else if (input.startsWith("www.") || input.includes(".")) {
+      elements.webview.src = `https://${input.startsWith("www.") ? input : 'www.' + input}`;
     } else {
-      webview.src = "https://www.google.com/search?q=" + addressBarBrowserInput.value;
+      elements.webview.src = `https://www.google.com/search?q=${input}`;
     }
-    addressBarBrowserInput.value = webview.src;
+    updateAddressBar();
   }
-});
+};
 
-windowCloseButton.addEventListener('click', () => {
-  api.windowCloseButton();
-});
+const bindEvents = () => {
+  elements.backButton.addEventListener('click', goBack);
+  elements.forwardButton.addEventListener('click', goForward);
+  elements.refreshButton.addEventListener('click', reloadPage);
+  elements.homeButton.addEventListener('click', goHome);
 
-windowMinimizeButton.addEventListener('click', () => {
-  api.windowMinimizeButton();
-});
+  elements.addressInput.addEventListener('focusin', () => elements.addressInput.select());
+  elements.addressInput.addEventListener('focusout', updateAddressBar);
+  elements.addressInput.addEventListener('keyup', handleAddressInput);
 
-windowMaximizeButton.addEventListener('click', () => {
-  api.windowMaximizeButton();
-});
+  elements.closeButton.addEventListener('click', api.windowCloseButton);
+  elements.minimizeButton.addEventListener('click', api.windowMinimizeButton);
+  elements.maximizeButton.addEventListener('click', api.windowMaximizeButton);
 
-webview.addEventListener('did-navigate', (event) => {
-  addressBarBrowserInput.value = event.url;
-});
+  elements.alwaysOnTopButton.addEventListener('click', toggleAlwaysOnTop);
+  elements.newTabButton.addEventListener('click', api.newTab);
 
-webview.addEventListener('did-navigate-in-page', (event) => {
-  addressBarBrowserInput.value = event.url;
-});
+  elements.webview.addEventListener('did-navigate', (event) => elements.addressInput.value = event.url);
+  elements.webview.addEventListener('did-navigate-in-page', (event) => elements.addressInput.value = event.url);
+};
 
-webview.addEventListener('new-window', (event) => {
-  console.log(event.url);
-});
-
-browserNewTabButton.addEventListener('click', () => {
-  api.newTab();
-});
-
-
-init()
+init();
+bindEvents();
