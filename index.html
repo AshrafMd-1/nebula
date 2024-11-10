@@ -9,10 +9,14 @@
     ></script>
 </head>
 <body>
+<div class="title-bar-container">
 <div class="title-bar">
     <div class="special-function-button-container">
         <div class="browser-button" id="browser-always-on-top">
             <i class="fa-solid fa-ban"></i>
+        </div>
+        <div class="browser-button" id="browser-hide-title-bar">
+            <i class="fa-solid fa-window-maximize"></i>
         </div>
     </div>
     <div class="browser-button-container">
@@ -54,11 +58,10 @@
         ><i class="fa-solid fa-x"></i></div>
     </div>
 </div>
+</div>
 <div class="content">
     <webview allowpopups id="webview"></webview>
 </div>
-
-
 <script src="/src/renderer.js" type="module"></script>
 </body>
 </html>

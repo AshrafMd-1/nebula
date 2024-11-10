@@ -45,30 +45,26 @@ body {
     color: #fff;
 }
 
-/* Default color when always on top is inactive */
-.always-on-top-off , .hide-title-bar-off {
+.always-on-top-icon-off , .hide-title-bar-icon-off {
     color: #d5d5d5;
 }
 
-.always-on-top-off:hover , .hide-title-bar-off:hover {
+.always-on-top-icon-off:hover , .hide-title-bar-icon-off:hover {
     color: #fff;
 }
 
-/* Active color when always on top is active */
-.always-on-top-on , .hide-title-bar-on {
+.always-on-top-icon-on , .hide-title-bar-icon-on {
     color: #d76969;
 }
 
-.always-on-top-on:hover , .hide-title-bar-on:hover {
+.always-on-top-icon-on:hover , .hide-title-bar-icon-on:hover {
     color: #d04f4f;
 }
 
 
 .window-button, .browser-button {
     border: none;
-    height: 20px;
     width: 20px;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,4 +173,25 @@ body {
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
+
+.hide-title-bar-container {
+    position: absolute;
+    width: 100%;
+    margin-top:-6vh;
+    padding-bottom: 4vh;
+    transition: all 0.2s;
+}
+
+.hide-title-bar-container:hover {
+    padding-bottom: 4vh;
+    margin-top: 0;
+}
+
+.hide-title-bar{
+    -webkit-app-region: no-drag;
+}
+
+.content-expand{
+    height: 100vh;
 }
