@@ -10,8 +10,10 @@
 </head>
 <body>
 <div class="title-bar">
-    <div class="browser-button" id="browser-always-on-top">
-        <i class="fa-solid fa-ban"></i>
+    <div class="special-function-button-container">
+        <div class="browser-button" id="browser-always-on-top">
+            <i class="fa-solid fa-ban"></i>
+        </div>
     </div>
     <div class="browser-button-container">
         <div class="browser-button" id="browser-back">
@@ -45,25 +47,13 @@
             <i class="fa-solid fa-window-minimize"></i>
         </div>
         <div class="window-button" id="window-maximize">
-            <i class="fa-solid fa-window-maximize"></i>
+            <i class="fa-solid fa-window-restore"></i>
         </div>
         <div class="window-button"
              id="window-close"
         ><i class="fa-solid fa-x"></i></div>
     </div>
 </div>
-<!--<div class="popup-browser-address-bar">-->
-<!--    <input-->
-<!--            id="popup-browser-address"-->
-<!--            placeholder="Enter URL..."-->
-<!--            type="text"-->
-<!--    />-->
-
-<!--</div>-->
-<!--<div id="peek">-->
-<!--    <webview id="peek-webview" src="https://www.bing.com"-->
-<!--    ></webview>-->
-<!--</div>-->
 <div class="content">
     <webview allowpopups id="webview"></webview>
 </div>

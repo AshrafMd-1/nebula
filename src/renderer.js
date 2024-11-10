@@ -42,7 +42,7 @@ const toggleAlwaysOnTop = () => {
   elements.alwaysOnTopIcon.classList.toggle('always-on-top-on', isAlwaysOnTop);
   elements.alwaysOnTopIcon.classList.toggle('always-on-top-off', !isAlwaysOnTop);
 
-  api.toggleAlwaysOnTop();
+  specialFunctions.toggleAlwaysOnTop()
 };
 
 const handleAddressInput = (event) => {
@@ -66,16 +66,17 @@ const bindEvents = () => {
   elements.refreshButton.addEventListener('click', reloadPage);
   elements.homeButton.addEventListener('click', goHome);
 
-  elements.addressInput.addEventListener('focusin', () => elements.addressInput.value='');
+  elements.addressInput.addEventListener('focusin', () => elements.addressInput.value = '');
   elements.addressInput.addEventListener('focusout', updateAddressBar);
   elements.addressInput.addEventListener('keyup', handleAddressInput);
 
-  elements.closeButton.addEventListener('click', api.windowCloseButton);
-  elements.minimizeButton.addEventListener('click', api.windowMinimizeButton);
-  elements.maximizeButton.addEventListener('click', api.windowMaximizeButton);
+  elements.closeButton.addEventListener('click', windowFunctions.windowCloseButton);
+  elements.minimizeButton.addEventListener('click', windowFunctions.windowMinimizeButton);
+  elements.maximizeButton.addEventListener('click', windowFunctions.windowMaximizeButton);
 
   elements.alwaysOnTopButton.addEventListener('click', toggleAlwaysOnTop);
-  elements.newTabButton.addEventListener('click', api.newTab);
+
+  elements.newTabButton.addEventListener('click', browserFunctions.newTab);
 
   elements.webview.addEventListener('did-navigate', (event) => elements.addressInput.value = event.url);
   elements.webview.addEventListener('did-navigate-in-page', (event) => elements.addressInput.value = event.url);

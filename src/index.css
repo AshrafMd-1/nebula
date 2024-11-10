@@ -46,20 +46,20 @@ body {
 }
 
 /* Default color when always on top is inactive */
-.always-on-top-off {
+.always-on-top-off , .hide-title-bar-off {
     color: #d5d5d5;
 }
 
-.always-on-top-off:hover {
+.always-on-top-off:hover , .hide-title-bar-off:hover {
     color: #fff;
 }
 
 /* Active color when always on top is active */
-.always-on-top-on {
+.always-on-top-on , .hide-title-bar-on {
     color: #d76969;
 }
 
-.always-on-top-on:hover {
+.always-on-top-on:hover , .hide-title-bar-on:hover {
     color: #d04f4f;
 }
 
@@ -170,4 +170,11 @@ body {
     .content, #popup-browser-address {
         height: 94vh;
     }
+}
+
+.special-function-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
