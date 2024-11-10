@@ -45,19 +45,19 @@ body {
     color: #fff;
 }
 
-.always-on-top-icon-off , .hide-title-bar-icon-off {
+.always-on-top-icon-off, .hide-title-bar-icon-off {
     color: #d5d5d5;
 }
 
-.always-on-top-icon-off:hover , .hide-title-bar-icon-off:hover {
+.always-on-top-icon-off:hover, .hide-title-bar-icon-off:hover {
     color: #fff;
 }
 
-.always-on-top-icon-on , .hide-title-bar-icon-on {
+.always-on-top-icon-on, .hide-title-bar-icon-on {
     color: #d76969;
 }
 
-.always-on-top-icon-on:hover , .hide-title-bar-icon-on:hover {
+.always-on-top-icon-on:hover, .hide-title-bar-icon-on:hover {
     color: #d04f4f;
 }
 
@@ -168,7 +168,7 @@ body {
     }
 }
 
-.special-function-button-container{
+.special-function-button-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +178,7 @@ body {
 .hide-title-bar-container {
     position: absolute;
     width: 100%;
-    margin-top:-6vh;
+    margin-top: -6vh;
     padding-bottom: 4vh;
     transition: all 0.2s;
 }
@@ -188,10 +188,10 @@ body {
     margin-top: 0;
 }
 
-.hide-title-bar{
+.hide-title-bar {
     -webkit-app-region: no-drag;
 }
 
-.content-expand{
+.content-expand {
     height: 100vh;
 }
