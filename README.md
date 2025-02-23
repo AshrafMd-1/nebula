@@ -14,4 +14,4 @@ Nebula is a simplistic web browser using electronJs framework.
 - [ ] Peek
 - [ ] On the top Address bar
 
-> Still in alpha stage
+> Archived in favour of other Electron browser alternatives (I am currently busy).
