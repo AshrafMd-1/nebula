@@ -1,17 +1,11 @@
-# Nebula - A simplistic web browser
+# Nebula – A Simplistic Web Browser
 
-Nebula is a simplistic web browser using electronJs framework.
+> 📦 **Archived** — This project has been discontinued in favor of other Electron-based browser alternatives like **Deta Surf**.
 
-# Features
+**Nebula** is a minimalist web browser built using the **Electron.js** framework, designed for simplicity and focused browsing.
 
-- Minimalistic design
-- Always on top
-- Hide title bar
+## Features
 
-# Coming soon
-
-- [ ] Split screen
-- [ ] Peek
-- [ ] On the top Address bar
-
-> Archived in favour of other Electron browser alternatives (I am currently busy).
+- Clean, minimalistic design
+- Always-on-top window support
+- Hidden title bar for distraction-free use
