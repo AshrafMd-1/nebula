@@ -80,7 +80,3 @@ nebula/
 | Hide toolbar | Click the **window-maximize** icon; hover the top edge to peek |
 | New window | Click the **+** icon |
 | Go home | Click the **home** icon (loads google.com) |
-
-## License
-
-MIT - see [LICENSE](LICENSE) for details.
